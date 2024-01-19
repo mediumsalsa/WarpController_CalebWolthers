@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
         void Update()
         {
-        if (characterController.isGrounded && Input.GetButton("Jump"))
+        if (characterController.isGrounded && Input.GetKey("e"))
         {
             currentMovement.y = jumpSpeed;
         }
@@ -103,11 +103,11 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
             {
 
-                OnTeleport();
+               // OnTeleport();
 
-               // characterController.enabled = false;
-               // gameObject.transform.position = new Vector3(0, 0, 0);
-               // characterController.enabled = true;
+                characterController.enabled = false;
+                gameObject.transform.position = new Vector3(0, 0.95f, 0);
+                characterController.enabled = true;
             }
         }
 
